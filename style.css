@@ -1,0 +1,72 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #d9a7c7, #fffcdc);
+    font-family: sans-serif;
+}
+
+.loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    padding: 60px 30px 30px 30px;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.animation {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.ball {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: linear-gradient(to right, #d9a7c7, #fffcdc);
+/* Maintenant on affecte l'animation, donc ici bounce, en lui donnant le nom, la durée et combien de fois elle se répète */
+    animation: bounce 1.2s infinite;
+}
+
+.ball:not(:last-child) {
+    margin-right: 10px;
+}
+
+/* Pour faire l'animation en décalé */
+.ball:nth-child(2) {
+    animation-delay: 1.3s;
+}
+
+.ball:nth-child(3) {
+    animation-delay: 1.4s;
+}
+
+.text {
+    color: rgb(179, 178, 178);
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+/* Pour l'animation, on utilise @keyframes suivi du nom de l'animation (c'est le nom qu'on veut) */
+
+@keyframes bounce {
+    0% {
+        transform: translateY(-100%);
+    }
+    50% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
